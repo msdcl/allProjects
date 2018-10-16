@@ -1,0 +1,70 @@
+.Dashboard{
+    height:auto;
+    font-size: 30px;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    font-style:italic;
+    padding-left: 1px;
+   
+}
+.container-fluid{
+    height:88vh;
+    background-color: #e4e7ea
+}
+.main{
+    background-color: #f0f3f5;
+   
+}
+/* .logout-btn{
+    background-color: #434E3C;
+} */
+/* .logout-btn:hover{
+    background-image: linear-gradient(45deg,#5e0231, #dbc3d0,#5e0231);
+    color:white;
+} */
+.normalUserList{
+    margin-top: 35px;
+    height: 500px;
+    overflow-y: scroll;
+    border:1px solid #acb4bc
+}
+.eachUser{
+    width:100%;
+    text-align: center;
+}
+.even{
+    background-color: #FAEBD7
+
+}
+.odd{
+    background-color: white;
+}
+
+.eachUser:hover{
+    cursor: pointer;
+    background-color: #20a8d8
+}
+
+.icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  /* .navbar-toggler{
+    border: 1px solid white;
+ } */
+ .heading{
+     text-align: center;
+     font-size: 25px;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    font-style:italic;
+  
+    color: white;
+   
+ }
+ .list{
+     text-align: center
+ }
+ .headingRow{
+     margin-top: 10px;
+    background-color: #20a8d8;
+ }

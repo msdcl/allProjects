@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great|Lobster|Yrsa|Noto+Serif");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+.modal-content{
+    background-color: #f0f3f5;
+}
+.navbar-toggler{
+    border: 1px solid #3366CC;
+}
+.users{
+    margin-top: 2px;
+}

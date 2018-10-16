@@ -1,0 +1,67 @@
+.signUpForm{
+    /* border: 1px solid #c8ced3; */
+   color: white;
+}
+.form-control{
+    width: 98%;
+    margin-left:3px;
+    margin-right: 3px;
+}
+label{
+    margin-left:3px;
+    margin-right: 3px;
+}
+.row1{
+    margin-top: 80px;
+}
+
+.signIn{
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.signIn:hover{
+    color: brown
+}
+.welcome{
+    background-color: #3367d6;
+    color:white;
+}
+.container-fluid{
+    background-image: url('../../../assets/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+background-position:center;
+}
+.heading{
+    background-color: #1DACD6;
+}
+input{
+   
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+.btn{
+    border: none;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: #dfe1e2
+}
+input:focus{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}

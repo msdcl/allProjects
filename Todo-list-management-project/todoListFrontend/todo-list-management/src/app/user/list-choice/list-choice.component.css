@@ -1,0 +1,100 @@
+
+.main{
+    height:auto;
+    font-size: 20px;
+    color: white;
+    background-color: #20a8d8;
+    font-family: 'EB Garamond', serif;
+   padding-left: 5%;
+}
+.main1{
+    color: white;
+    font-size: 40px;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+  
+}
+.contain{
+    background-image: url('../../../assets/port2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+background-position:center;
+height: 100vh;
+   
+}
+.quote{
+    font-family: 'Lobster', cursive;
+    font-size:4.5vw;
+    padding-top: 15%;
+    color:#20a8d8;
+}
+.btn{
+    color: white;
+    margin-left: 5px;
+  
+}
+.btn2{
+   cursor: pointer;
+  
+}
+.column{
+    text-align: center;
+}
+.navbar{
+    width: 100vw;
+}
+/* /* .btnn{
+    margin-left: 10%;
+    margin-right: 10%;
+}/* */
+.bell{
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 1;
+   
+} 
+.bell:hover{
+    cursor: pointer;
+}
+/* .nav1{
+    margin-left: 20%;
+    margin-right: 20%;
+} */
+.btn3{
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+.nav-item{
+    margin-left:10px;
+}
+.even{
+    background-color: #C4D8E2;
+}
+.odd{
+    background-color: #E9EDF6;
+}
+.users{
+    margin-top: 2px;
+}
+@media only screen and (min-width:576px) and (max-width:850px){
+    .quote{
+        font-size:5.5vw;
+    }
+}
+
+@media only screen and (min-width:482px) and (max-width:576px) {
+    .quote{
+        font-size:7.5vw;
+    }
+}
+@media only screen and (min-width:315px) and (max-width:482px){
+    .quote{
+        font-size:9.5vw;
+    }
+}
+@media only screen and (max-width:315px){
+    .quote{
+        font-size:10vw;
+    }
+}

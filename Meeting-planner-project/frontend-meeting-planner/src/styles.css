@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great|Lobster|Yrsa|Noto+Serif");
+.container-fluid{
+    background-color: #e4e5e6;
+    height:100vh
+}
+.btn{
+    background-color: #20a8d8;
+}
+.modal-header{
+    background-color: #63c2de;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    font-style:italic;
+    font-size: 20px;
+}

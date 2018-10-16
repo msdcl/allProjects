@@ -1,0 +1,135 @@
+
+  <nav class="navbar navbar-expand-lg  main">
+    <div class="navbar-brand Dashboard ">
+       Search
+    </div>
+    <!-- <ul class="bell-icon">
+      <li class="nav-item bell">
+        <i class="fa fa-bell" [class.extraclass]="anyNotification" aria-hidden="true" data-toggle="modal" data-target=".bd-example-modal-lg2"
+          (click)="notificationSeen()"></i>
+      </li>
+    </ul> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary logout-btn" (click)="logout()">
+                    logout
+                </button>
+  
+            </li>
+        </ul>
+    </div>
+  </nav>
+<div class="container-fluid">
+  <div class="row row1">
+    <div class="col-sm-12 col-md-10 offset-md-1 col1">
+        
+        <div class="input-group">
+            <span class="input-group-addon search"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input id="text" type="text" class="form-control"  [(ngModel)]="searchText" name="searchText" placeholder="serach issue" (keyup)="searchingIssue()">
+          </div>
+         
+      <!-- <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+        <tr>
+            <th style="width: 40%">
+                <mfDefaultSorter by="name">Title</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="email">Reporter</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="age">Date</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="city">Status</mfDefaultSorter>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data">
+            <td (click)="showDetails(item.id)">{{item.title}}</td>
+            <td (click)="showDetails(item.id)">{{item.reporter}}</td>
+            <td (click)="showDetails(item.id)" class="small">{{item.createdOn|date:'short'}}</td>
+            <td (click)="showDetails(item.id)" class="small status1" *ngIf="item.status=='in-progress'"><span class="span">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status2" *ngIf="item.status=='in-test'"><span class="span2">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status3" *ngIf="item.status=='backlog'"><span class="span3">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status4" *ngIf="item.status=='done'"><span class="span4">{{item.status}}</span></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator ></mfBootstrapPaginator>
+            </td>
+        </tr>
+        </tfoot>
+      </table> -->
+
+      <table #dataTable class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Reporter</th>
+                <th>Date</th>
+                <th>Status</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td (click)="showDetails(item.id)">{{item.title}}</td>
+            <td (click)="showDetails(item.id)">{{item.reporter}}</td>
+            <td (click)="showDetails(item.id)" class="small">{{item.date|date:'short'}}</td>
+            <td (click)="showDetails(item.id)" class="small status1" *ngIf="item.status=='in-progress'"><span class="span">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status2" *ngIf="item.status=='in-test'"><span class="span2">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status3" *ngIf="item.status=='backlog'"><span class="span3">{{item.status}}</span></td>
+            <td (click)="showDetails(item.id)" class="small status4" *ngIf="item.status=='done'"><span class="span4">{{item.status}}</span></td>
+        </tr>
+          </tbody>
+  </table>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-sm-12 col-md-10 offset-md-1">
+        <button type="button" class="btn btn-primary" [routerLink]="['/reportIssue']">Report an issue</button>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">Notifications</div>
+        <div class="modal-body">
+
+          <div *ngIf="notifications?.length>0 " class="textNotifications" #scrollMee [scrollTop]="scrollMee.scrollHeight">
+            <div *ngFor="let user of notifications; let i=index let even=even; let odd =odd">
+              <div class="row users " [ngClass]="{ odd: odd, even: even }">
+                
+                <div *ngIf="notificationID==user.id && isReminder; else otherContent" class="col-6 text">
+                  {{user.text}}
+                </div>
+                <ng-template  class="col-12 text" #otherContent> {{user.text}}</ng-template>
+                <div  *ngIf="notificationID==user.id && isReminder" class="col-3 snooze" (click)="snoozeIt(user.id)">
+                 Snooze
+                </div>
+                <div *ngIf="notificationID==user.id && isReminder" class="col-3 dismiss" (click)="dismissIt(user.id)">
+                  Dismiss
+                </div>
+              </div>
+            </div>
+          </div>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+

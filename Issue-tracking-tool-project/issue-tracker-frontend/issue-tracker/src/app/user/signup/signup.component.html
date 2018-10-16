@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row heading">
+     <div class="col-md-6 offset-md-3 main animated slideInDown">ISSUE - TRACKING</div>
+  </div>
+  <div class="row row1">
+    <div class="col-md-12 col-lg-4 offset-lg-4">
+    <form class="signUpForm rounded animated slideInDown" >
+      <div class="form-group">
+        <label for="exampleInputFirstName">User name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="user name" name="userName" [(ngModel)]="userName">
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email" name="email"
+          [(ngModel)]="email">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" name="password" [(ngModel)]="password">
+      </div>
+
+      <div class="form-group">
+          <label for="exampleMobile">Mobile number</label><br>
+          <!-- <span>
+              <select class="selectOpt" [(ngModel)]="selectedOption" #i="ngModel" name="selectedOption" (change)="selectChangeHandler($event.target.value)">
+                  <option class="optionc" *ngFor="let i of countryCode"  [value]="i">{{i}}</option>
+                </select>
+          </span> -->
+          <input type="tel" class="form-control" id="exampleMobile" placeholder="mobile number" name="mobileNumber" [(ngModel)]="mobileNumber"  maxlength="10" >
+        
+        </div>
+
+      <button type="submit" class="btn btn-primary btn-block signup-btn" (click)="doSignUp()">SignUp</button>
+      <div class="signIn" [routerLink]="['/login']">
+        Login
+     </div>
+    </form>
+  </div>
+  </div>
+  </div>

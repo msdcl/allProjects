@@ -1,0 +1,160 @@
+<nav class="navbar navbar-expand-lg  main ">
+  <div class="navbar-brand Dashboard ">
+    Description
+  </div>
+  <ul class="bell-icon">
+    <li class="nav-item bell">
+      <i class="fa fa-bell" [class.extraclass]="anyNotification" aria-hidden="true" data-toggle="modal" data-target=".bd-example-modal-lg2"
+        (click)="notificationSeen()"></i>
+    </li>
+  </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary logout-btn" (click)="logout()">
+          Logout
+        </button>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+
+  <div class="row row1">
+    <div class="col-sm-12 col-md-10 offset-md-1 col1">
+      <div class="col2">
+        <span class="heading">Issue details</span>
+        <button *ngIf="issueView" type="button" class="btn btn-secondary follow" (click)="followIt()">
+          follow
+        </button>
+        
+      </div>
+      <form class="myForm">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Issue title</label>
+          <input *ngIf="otherUser && issueView" type="email" class="form-control" id="exampleFormControlInput1" placeholder="title" name="title" [(ngModel)]="title" readonly>
+          <input *ngIf="issueReporting || isReporter" type="email" class="form-control" id="exampleFormControlInput1" placeholder="title" name="title" [(ngModel)]="title">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Assignee</label>
+          <select *ngIf="allUsers?.length>0"  class="form-control" id="exampleFormControlSelect1" #i="ngModel" placeholder="assign to" name="assignee" [(ngModel)]="assignee"
+            (change)="selectChangeHandler($event.target.value)">
+            <option *ngFor="let i of allUsers" [value]="i.id">{{i.name}}</option>
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Status</label>
+          <select *ngIf="status?.length>0"  class="form-control" id="exampleFormControlSelect1" #i="ngModel" placeholder="Status" name="issueStatus" [(ngModel)]="issueStatus"
+            (change)="selectChangeHandler2($event.target.value)">
+            <option *ngFor="let i of status" [value]="i">{{i}}</option>
+
+          </select>
+        </div>
+
+        <div class="form-group" aria-readonly="true" >
+          <label for="exampleFormControlSelect1">Description</label>
+          <div class="description" *ngIf="otherUser && issueView" [froalaEditor] name="description" [(ngModel)]="description">Hello</div>
+          <div class="description" *ngIf="issueReporting || isReporter" [froalaEditor] name="description" [(ngModel)]="description" >Hello</div>
+        </div>
+       
+        <div *ngIf="issueReporting || isReporter" class="form-group" >
+          <input type="file" (change)="onFileSelected($event)" multiple>
+        </div>
+       <div *ngIf="issueView">Attachments:<br>
+          <a href="http://issue-tracking-backend.singhmahendra.me/{{attachments}}" target="_blank">{{originalName}}</a>
+          </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="any comment" name="comment" [(ngModel)]="comment" (keydown)="addComment($event)">
+         <div *ngIf="allComments?.length>0" class="commentList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+          <div  *ngFor="let text of allComments ; let odd=odd; let even=even;">
+            <div class="row row3" [ngClass]="{ odd: odd, even: even }">
+            <div class="col-3">
+             {{ text.by}}
+            </div>
+            <div class="col-6">
+              {{text.text}}
+            </div>
+            <div class="col-3 small">
+              {{text.date|date:'short'}}
+            </div>
+
+            </div>
+          </div>
+
+         </div>
+          
+        </div>
+        <div *ngIf="issueReporting" class="add">
+          <button type="button" class="btn btn-primary" (click)="reportIssue()">
+            report issue
+          </button>
+        </div>
+        <div *ngIf="issueView" class="add" >
+          <button type="button" class="btn btn-primary" (click)="updateIssue()">
+            update
+          </button>
+          <span>
+            <button type="button" class="btn btn-secondary followers" data-toggle="modal" data-target=".bd-example-modal-sm" >
+              followers
+            </button>
+          </span>
+           
+        </div>
+      
+        
+      </form>
+
+    </div>
+  </div>
+  
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <div class="modal-header password1">Followers</div>
+        <div class="modal-body">
+        
+         <div *ngFor="let watch of watcherArray; let even=even; let odd =odd">
+           <div class="row row5" [ngClass]="{ odd: odd, even: even }">
+             {{watch.name}}
+           </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">Notifications</div>
+        <div class="modal-body">
+
+          <div *ngIf="notifications?.length>0 " class="textNotifications" #scrollMee [scrollTop]="scrollMee.scrollHeight">
+            <div *ngFor="let user of notifications; let i=index let even=even; let odd =odd">
+              <div class="row users " [ngClass]="{ odd: odd, even: even }">
+                
+                <div class="col-12 text" (click)="visitIssue(user.issueId)" data-dismiss="modal">
+                  {{user.text}}
+                </div>
+              </div>
+            </div>
+          </div>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

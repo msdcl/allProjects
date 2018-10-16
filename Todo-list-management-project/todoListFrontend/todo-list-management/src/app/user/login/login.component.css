@@ -1,0 +1,93 @@
+.contain{
+    background-image: url('../../../assets/todobg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+background-position:center;
+height: 100vh;
+}
+
+.loginForm{
+    color: white;
+    font-weight: bold;
+    margin-top: 20%;
+    margin-bottom: 10%;
+   /* border:1px solid #c8ced3;
+    box-shadow: #3366CC */
+   
+}
+
+.btn{
+    color: white;
+    margin-left: 1px;
+}
+.form-control{
+    width: 100%;
+}
+
+.text{
+    margin-top: 10px;
+    text-align: center;
+   font-style: italic;
+   color :white
+}
+.signup{
+    margin-top: 10px;
+    text-align: center;
+   font-style: italic;
+   color: white;
+   margin-bottom: 5%;
+ 
+}
+a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.main{
+    height:auto;
+    font-size: 6.85vw;
+    color: white;
+    background-color: #20a8d8;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    padding-left: 9%;
+    padding-right: 7%;
+
+}
+.modal-header{
+    background-color: #20a8d8;
+    color: white;
+}
+.password{
+    cursor: pointer;
+}
+input{
+   
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+input:focus{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}
+.btn1{
+    border: none;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.btn1:hover{
+    background-color: #dfe1e2
+}
+.modal-body .form-group input{
+    border-bottom: 1px solid black;
+    color: black;
+}

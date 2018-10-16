@@ -1,0 +1,47 @@
+:root{
+    font-size: 20px;
+}
+.content{
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid blue;
+}
+.title{
+    font-size: 0.8rem;
+    font-style: italic;
+    color: white
+}
+.todoList{
+    overflow-y: scroll;
+    height: 30vh;
+}
+.eachTaskDone{
+    background-color:#A5A5AF;
+    border: 1px solid black;
+    width: 100%;
+}
+.eachTaskIncom{
+    background-color: #57bc90;
+    border: 1px solid black;
+    width: 100%;
+}
+.eachList{
+    border: 1px solid black;
+    width: 100%;
+}
+.list{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: 2px solid red;
+    width:100%;
+}
+.icon{
+    font-size: 15px;
+    margin-left: 70%;
+    color: white;
+    cursor: pointer;
+}

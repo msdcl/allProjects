@@ -1,0 +1,162 @@
+.Dashboard{
+    height:auto;
+    font-size: 30px;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+   
+    padding-left: 1px;
+  
+}
+.container-fluid{
+    height: auto;
+}
+.icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .fa-bell{
+    font-size: 30px;
+   color:white
+}
+
+.bell-icon{
+    margin-top:2%;
+}
+ul{
+    list-style: none
+}
+.textNotifications{
+    height: 60vh;
+    overflow-y: scroll
+}
+.row1{
+    padding-top:20px; 
+}
+.row2{
+    padding-top:20px; 
+}
+.follow{
+    float: right;
+}
+.followers{
+    float: right;
+}
+.col2{
+    background-color: rgba(133, 127, 127);
+}
+.heading{
+    top: 5px;
+    font-size: 25px;
+    background-color: rgba(133, 127, 127)
+
+}
+
+form{
+  
+    border: 1px solid #c8ced3;
+  
+    background-color: white;
+}
+
+.form-control{
+    width: 98%;
+    margin-left:3px;
+    margin-right: 3px;
+}
+label{
+    margin-left:3px;
+    margin-right: 3px;
+}
+.description{
+    margin-left:3px;
+    margin-right: 3px;
+}
+.add{
+    padding-top:5px;
+    margin-left:3px;
+    margin-right: 3px;
+    margin-bottom: 1px; 
+    border-top: 1px solid #c8ced3
+}
+.extraclass{
+    -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+@keyframes glowing {
+    0% { background-color: red; box-shadow: 0 0 3px #20a8d8; }
+    100% { background-color: grey; box-shadow: 0 0 3px grey; }
+  }
+  .my-disable{
+    pointer-events:none;
+}
+.commentList{
+    height: 100px;
+    overflow-y: scroll
+}
+.row3{
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 100%;
+    margin-left: 0.1px;
+    background-color:  #cccdcf;
+}
+.even{
+    background-color:  #f0f3f5;
+}
+.odd{
+    background-color:   #cccdcf;
+}
+.row5{
+    margin-bottom: 2px;
+}
+  @media only screen and (min-width:486px) and (max-width:768px){
+    .fa-bell{
+        font-size: 25px;
+    }
+    .bell-icon{
+        padding-top:2%;
+       
+    }
+    .Dashboard{
+      font-size: 25px;
+    }
+    .icon{
+       font-size: 20px;
+        
+     }
+}
+@media only screen and (min-width:300px) and (max-width:486px){
+    .fa-bell{
+        font-size: 23px;
+    }
+    .bell-icon{
+        padding-top:4%;
+       
+    }
+    .Dashboard{
+      font-size: 25px;
+    }
+    .icon{
+       font-size: 20px;
+        
+     }
+}
+@media only screen and (max-width:300px){
+    .fa-bell{
+        font-size: 20px;
+    }
+    .bell-icon{
+        padding-top:6%;
+       
+    }
+    .Dashboard{
+      
+        font-size: 20px;
+    }
+    .icon{
+       font-size: 20px;
+        
+     }
+}

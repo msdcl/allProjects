@@ -1,0 +1,118 @@
+:root{
+    font-size: 20px;
+}
+.main{
+    color: white;
+   
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+  
+    background-color: #20a8d8;
+}
+.navbar-brand{
+    font-size: 35px;
+}
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c8ced3;
+}
+.list{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width:auto;
+    background-color: white;
+    border: 1px solid #c8ced3;
+}
+.content{
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.icon{
+    font-size: 25px;
+    margin-left: 70%;
+    cursor: pointer;
+}
+.title{
+    font-size: 1.5rem;
+    font-style: italic;
+    
+}
+.todoList{
+    overflow-y: scroll;
+    height: 65vh;
+}
+.eachList{
+    width: 100%;
+}
+.even{
+    background-color: #C4D8E2;
+}
+.odd{
+    background-color: #E9EDF6;
+}
+.container-fluid{
+    background-image: url('../../../assets/port2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+background-position:center;
+height: 100vh;
+}
+.name{
+   
+    cursor: pointer;
+}
+.nav-item{
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+.users{
+    margin-top: 1%;
+    border:1px solid black;
+    width: 100%;
+}
+.addFriend{
+    overflow-y: scroll;
+    height: 65vh;
+   
+}
+.pending{
+    overflow-y: scroll;
+    height: 30vh;
+}
+.btn{
+  
+    margin-right: 1%;
+}
+.fa-bell{
+    font-size: 30px;
+   
+}
+.bell{
+    margin-right: 30px
+}
+.extraclass{
+    -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@keyframes glowing {
+    0% { background-color: rgb(178, 0, 9); box-shadow: 0 0 3px rgb(178, 0, 0); }
+    100% { background-color: grey; box-shadow: 0 0 3px grey; }
+  }
+  .plus-icon{
+    cursor: pointer;
+}
+.navbar-toggler{
+    border: 1px solid #3366CC;
+}
+.backBtn{
+    color: white;
+    text-align: center;
+    height:50px;
+    width:70px;
+}
+input:focus{
+    background-color: white;
+}

@@ -1,0 +1,94 @@
+.heading{
+    height:auto;
+    font-size: 6.85vw;
+    color:#2A52BE;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    font-style:italic;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: linear-gradient(45deg,#c9c9ff,#FFFFFF, #f1cbff);
+    text-align: center;
+}
+.container-fluid{
+    background-color: #e4e7ea;
+    height:100vh;
+}
+
+
+
+.loginForm{
+   
+    margin-top: 100px;
+    margin-bottom: 10%;
+    background-color: white;
+   
+}
+/* .form-control{
+    padding-left: 1px;
+    width: 98%;
+} */
+.form-group{
+    padding-left: 2px;
+    width: 99%;
+}
+.text{
+    margin-top: 10px;
+    text-align: center;
+   font-style: italic;
+   color :black
+}
+.signup{
+    margin-top: 10px;
+    text-align: center;
+   font-style: italic;
+   color:#20a8d8;
+   margin-bottom: 5%;
+  
+}
+.signup:hover{
+  cursor: pointer;
+ 
+}
+.main{
+    height:auto;
+    font-size: 6.85vw;
+    color:#20a8d8;
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    font-style:italic;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f0f3f5;
+    text-align: center;
+}
+.password{
+    cursor: pointer;
+}
+.password:hover{
+    color:#2A52BE;
+}
+.login-btn{
+    padding-left: 2px;
+    width: 99%;
+}
+
+/* .modal-content{
+    background-image: linear-gradient(45deg,#C25B56, grey,#C25B56);
+} */
+.modal-body{
+    /* background-image: linear-gradient(45deg,#318CE7,#ACE1AF,#318CE7); */
+}
+/* .login-btn:hover{
+    background-image: linear-gradient(45deg,#5e0231, #dbc3d0,#5e0231);
+    color:#2A52BE;
+} */
+/* .btn:hover{
+    background-image: linear-gradient(45deg,#5e0231, #dbc3d0,#5e0231);
+    color:#2A52BE;
+} */
+@media only screen and (max-width:600px){
+    .main{
+    font-size: 11.5vw;
+    }
+}

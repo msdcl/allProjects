@@ -1,0 +1,149 @@
+<nav class="navbar navbar-expand-lg navbar-dark main">
+  <a class="navbar-brand">
+    Multi-users
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item bell">
+        <i class="fa fa-bell" [class.extraclass]="anyNotification" aria-hidden="true" data-toggle="modal" data-target=".bd-example-modal-lg2"
+          (click)="updateTextNotifications()"></i>
+      </li>
+
+      <li class="nav-item">
+        <button type="button" class="btn btn-info" (click)="logout()">
+          <b>logout</b>
+        </button>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+        <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-info backBtn" data-container="body" data-toggle="popover" data-placement="right" data-content="go back">
+                    <i class="fa fa-long-arrow-left" style="font-size:36px" (click)="goToBackPage()"></i>
+                  </button>
+            
+                </div>
+            
+              </div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 offset-md-3 list">
+      <div class="content">
+        <label for="newListTitle" class="title">Title </label>
+        <br>
+        <input type="text" class="newList input-group-lg" name="newListName" [(ngModel)]="newListName" placeholder="List title" (keydown)="createNewTodoTList($event)">
+        <span>
+          <i class="fa fa-plus-circle plus-icon" style="font-size:25px;" (click)="addNewTodoList()"></i>
+        </span>
+      </div>
+      <div *ngIf="allTodoLists?.length > 0" class="todoList" #scrollMe [scrollTop]="(scrollToTop)?0:scrollMe.scrollHeight">
+        <div *ngFor="let list of allTodoLists; let odd=odd; let even=even;">
+            <div class="row sharedWith">
+                <div class="col-12 small share" data-toggle="modal" data-target=".bd-example-modal-lg1" (click)="friendToListShared(list.name)">shared with</div>
+            </div>
+          <div class=" row eachList" [ngClass]="{ odd: odd, even: even }">
+           
+            <div class="col-6 name" (click)="enterIntoList(list.name)">{{list.name}}
+               
+            </div>
+            <div class="col-2 shareIcon">
+             <i class="fa fa-share-alt share" aria-hidden="true" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="shareItWithFriends(list.name)"></i>
+             <div class="text small">share</div>
+            </div>
+            <div class="col-4">
+              <a>
+                <i class="fa fa-trash icon" aria-hidden="true" (click)="deleteTodoList(list.id)"></i>
+              </a>
+            </div>
+          </div>
+          <br>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-body">
+                 <h3>Friends</h3>
+                 <div *ngIf="allFriends?.length>0"  class="pending">
+                  <div *ngFor="let user of allFriends; let i=index let even=even; let odd =odd">
+                      <div class="row users "  [ngClass]="{ odd: odd, even: even }">
+                          <div class="col-6">
+                               {{user.friendName}}
+                          </div>
+                          <div class="col-6">
+                              <i class="fa fa-check-circle-o shareIt" style="font-size: 25px" aria-hidden="true" (click)="shareWithIt(user.friendId)"></i>
+                           
+                          </div>
+                      </div>
+                  </div>
+             </div>
+                
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-body">
+                 <h3>Shared With</h3>
+                 <div *ngIf="sharedWithFriends?.length>0"  class="pending">
+                  <div *ngFor="let user of sharedWithFriends; let i=index let even=even; let odd =odd">
+                      <div class="row users "  [ngClass]="{ odd: odd, even: even }">
+                          <div class="col-6">
+                               {{user.friendName}}
+                          </div>
+                          <div class="col-6">
+                              <button type="button" class="btn removeFriend" (click)="removeFriendFromSharedList(user.friendId)" >remove</button>
+                          </div>
+                      </div>
+                  </div>
+             </div>
+                
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-body">
+                 
+                 <div *ngIf="textNotifications?.length>0 "  class="textNotifications" #scrollMe1 [scrollTop]="scrollMe1.scrollHeight">
+                  <div *ngFor="let user of textNotifications; let i=index let even=even; let odd =odd">
+                      <div class="row users "  [ngClass]="{ odd: odd, even: even }">
+                          <div class="col-12">
+                               {{user.text}}
+                          </div>
+                      </div>
+                  </div>
+             </div>
+             <div class="load-more">
+                <button type="button" class="btn btn-info previousNoti" (click)="loadprevoiusTextNotifications()" >load more</button>
+              </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

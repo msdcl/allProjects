@@ -1,0 +1,82 @@
+.container-fluid{
+    background-image: url('../../../assets/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+background-position:center;
+}
+.heading{
+    background-color: #1DACD6;
+}
+
+.loginForm{
+    /* border: 1px solid #9ba3aa; */
+   color: white;
+   font-weight: bold;
+}
+.form-control{
+    width: 98%;
+    margin-left:3px;
+    margin-right: 3px;
+}
+input{
+   
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+label{
+    margin-left:3px;
+    margin-right: 3px;
+}
+.row1{
+    margin-top: 120px;
+}
+.bottom{
+    width: 98%;
+    margin-left:3px;
+    margin-right: 3px;
+}
+.password{
+    cursor: pointer;
+    margin-left: 3px;
+    color: #3367d6
+}
+.signup{
+  
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold
+
+}
+.signup:hover{
+    color: brown;
+}
+.signup:hover{
+    cursor: pointer;
+    color: rgb(99, 94, 94);
+}
+.password1{
+    color: white;
+}
+.btn{
+    border: none;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: #dfe1e2
+}
+input:focus{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+}

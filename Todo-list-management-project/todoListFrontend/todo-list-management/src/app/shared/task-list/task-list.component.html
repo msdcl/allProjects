@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12  list">
+            <div class=" content">
+                <label for="newListTitle" class="title">sub task </label>
+                <br>
+                <input type="text" class="newList input-group-lg" name="subTask" [(ngModel)]="subTask" placeholder="item" (keydown)="addSubTaskToList($event)">
+            </div>
+            <div *ngIf="listSubtasks?.length > 0" class="todoList" #scrollMe [scrollTop]="(scrollToTop)?0:scrollMe.scrollHeight">
+                <div *ngFor="let list of listSubtasks; let odd=odd; let even=even;">
+                    <div *ngIf="list.isDone==true" class="row eachTaskDone">
+                        <div class="col-2 checkbox1">
+                            <input id="done" name="done" type="checkbox" style="zoom:1.5;"  checked>
+                        </div>
+                        <div class="col-6 name " >{{list.taskName}} </div>
+                        <div class="col-4 ">
+                            <a>
+                                <i class="fa fa-trash icon" aria-hidden="true" ></i>
+                            </a>
+                        </div>
+            
+                    </div>
+
+                    <div *ngIf="list.isDone==false" class="row eachTaskIncom">
+
+                        <div class="col-2 checkbox2 ">
+                            <input id="done" name="done" type="checkbox" style="zoom:1.5;" >
+                        </div>
+                        <div class="col-6 name " >{{list.taskName}} </div>
+                        <div class="col-4 ">
+                            <a>
+                                <i class="fa fa-trash icon" aria-hidden="true" ></i>
+
+                            </a>
+                          </div>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

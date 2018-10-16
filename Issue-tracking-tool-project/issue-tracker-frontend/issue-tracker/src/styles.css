@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Anton|Arvo");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+.modal-header{
+    background-color: #6993ee;
+    font-family: 'Arvo', serif;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+}
+.heading{
+    background-color: #6993ee;
+    font-family: 'Arvo', serif;
+    font-size: 45px;
+    color: white;
+    width: 100vw
+}
+.main{
+    text-align: center;
+}
+.container-fluid{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100vh;
+}
+.navbar{
+    background-color: #1DACD6;
+    color: white;
+}
+
+@media only screen and (min-width:768px) and (max-width:909px){
+    .heading{
+    font-size: 4vw;
+    }
+}
+@media only screen and (min-width:312px) and (max-width:460px){
+    .heading{
+    font-size: 30px;
+    }
+}
+@media only screen  and (max-width:312px){
+    .heading{
+    font-size: 25px;
+    }
+}

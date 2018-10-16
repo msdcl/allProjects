@@ -1,0 +1,59 @@
+<div class="container-fluid contain">
+    <div class="row ">
+      <div class="col-12 main">Meeting planner </div></div>
+    <div class="row row1" >
+      <div class="col-sm-12 col-md-4 offset-md-4">
+        <form class="loginForm rounded">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email"
+              [(ngModel)]="email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="password">
+            <div class="small password" data-toggle="modal" data-target=".bd-example-modal-sm">
+              <a>forgot password ?</a>
+            </div>
+          </div>
+  
+          <button type="submit" class="btn btn-info login-btn" (click)='doSignIn()'>Login</button>
+          <div class="text">
+            Create new account
+          </div>
+          <div class="signup" [routerLink]="['/signup']">
+             SignUp
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-header password">Change password</div>
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Enter email</label>
+                <input type="text" class="form-control" id="recipient-name" name="userEmail" [(ngModel)]="userEmail">
+              </div>
+              <div class="form-group"  *ngIf="nextClicked">
+                <label for="recipient-name" class="col-form-label">Enter code</label>
+                <input type="text" class="form-control" id="recipient-name1" name="secureCode" [(ngModel)]="secureCode">
+              </div>
+              <div class="form-group" *ngIf="nextClicked">
+                <label for="recipient-name" class="col-form-label">Enter new password</label>
+                <input type="password" class="form-control" id="recipient-name2" name="newPassword" [(ngModel)]="newPassword">
+              </div>
+  
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeButtonClicked()">Close</button>
+            <button type="button" class="btn btn-info nextButton" *ngIf="!nextClicked" (click)="forgotPassword()">Next</button>
+            <button type="button" class="btn btn-info doneButton" *ngIf="nextClicked" (click)="changePassword()">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
