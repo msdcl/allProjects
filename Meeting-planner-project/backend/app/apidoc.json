@@ -1,0 +1,7 @@
+{
+    "name": "Meeting planner",
+    "version": "0.0.1",
+    "description": "Api documentation for Meeting planner",
+    "title": "Meeting planner APIs",
+    "url" : "http://localhost:3003"
+  }

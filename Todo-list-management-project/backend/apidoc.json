@@ -1,0 +1,7 @@
+{
+    "name": "Todo list",
+    "version": "0.0.1",
+    "description": "Api documentation for Todo list management",
+    "title": "Todo list management API's",
+    "url" : "http://localhost:3000"
+  }
